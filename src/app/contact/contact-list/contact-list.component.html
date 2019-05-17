@@ -1,3 +1,5 @@
-<div *ngFor="let contact of contacts">
-  {{contact.firstName}} {{contact.lastName}}, tel. {{contact.phone}}
+<div *ngFor="let c of contacts">
+  <!--{{contact.firstName}} {{contact.lastName}}, tel. {{contact.phone}} retrieved through -list-item,
+  here transfers c variable onwards-->
+  <dtca-contact-list-item [contact]="c"></dtca-contact-list-item>
 </div>
