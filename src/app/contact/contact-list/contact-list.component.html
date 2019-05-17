@@ -1,3 +1,3 @@
-<p>
-  contact-list works!
-</p>
+<div *ngFor="let contact of contacts">
+  {{contact.firstName}} {{contact.lastName}}, tel. {{contact.phone}}
+</div>
