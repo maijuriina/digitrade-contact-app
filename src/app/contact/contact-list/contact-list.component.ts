@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Contact} from '../contact';
 import {formGroupNameProvider} from '@angular/forms/src/directives/reactive_directives/form_group_name';
 import {group} from '@angular/animations';
+import {ContactService} from '../services/contact.service';
 
 @Component({
   selector: 'dtca-contact-list',
@@ -12,7 +13,7 @@ export class ContactListComponent implements OnInit {
   contacts: Contact[];
   selectedContactName: string;
 
-  constructor() {
+  constructor(private contactService: ContactService) {
     this.contacts = [];
     this.selectedContactName = '';
   }
@@ -23,9 +24,7 @@ export class ContactListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.contacts.push(new Contact('Hillevi', 'Hiiri', '0501234567'));
-    this.contacts.push(new Contact('Kieku', 'Kukko', '0401234567'));
-    this.contacts.push(new Contact('Mauku', 'Mirri', '0451234567'));
+    this.contacts = this.contactService.get();
     console.log(this.contacts);
   }
 }
