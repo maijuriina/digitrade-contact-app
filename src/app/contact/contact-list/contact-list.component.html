@@ -1,5 +1,8 @@
 <div *ngFor="let c of contacts">
   <!--{{contact.firstName}} {{contact.lastName}}, tel. {{contact.phone}} retrieved through -list-item,
-  here transfers c variable onwards-->
-  <dtca-contact-list-item [contact]="c"></dtca-contact-list-item>
+  here transfers c variable onwards and takes click event of picked item-->
+  <dtca-contact-list-item
+    [contact]="c"
+  (selected)="onContactSelected($event)">
+  </dtca-contact-list-item>
 </div>
