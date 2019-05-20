@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Contact} from '../contact';
+import {formGroupNameProvider} from '@angular/forms/src/directives/reactive_directives/form_group_name';
+import {group} from '@angular/animations';
 
 @Component({
   selector: 'dtca-contact-list',
@@ -8,13 +10,15 @@ import {Contact} from '../contact';
 })
 export class ContactListComponent implements OnInit {
   contacts: Contact[];
+  selectedContactName: string;
 
   constructor() {
     this.contacts = [];
+    this.selectedContactName = '';
   }
 
   onContactSelected(contact: Contact): void {
-    console.log(contact);
+    this.selectedContactName = contact.firstName + ' ' + contact.lastName;
     alert(contact.firstName);
   }
 
