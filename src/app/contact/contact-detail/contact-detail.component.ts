@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Contact } from '../contact';
 
 @Component({
   selector: 'dtca-contact-detail',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactDetailComponent implements OnInit {
 
-  constructor() { }
+  contact: Contact;
+
+  constructor() {
+    this.contact = new Contact();
+  }
 
   ngOnInit() {
   }

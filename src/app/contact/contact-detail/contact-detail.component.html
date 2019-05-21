@@ -1,6 +1,58 @@
-<mat-card>Piip</mat-card>
-<mat-card>Piip</mat-card>
-<mat-card>Piip</mat-card>
-<button mat-icon-button color="accent">
-  <i class="material-icons">favorite</i>
-</button>
+<mat-card>
+  <div fxLayout="row" fxLayoutAlign="center start">
+    <div fxLayout="column" class="width-detail">
+
+      <mat-card-title class="app-title">CONTACT APP 2019</mat-card-title>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.firstName"
+               type="text"
+               required maxlength="12"
+               placeholder="First name">
+        </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.lastName"
+               type="text"
+               required maxlength="12"
+               placeholder="Last name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.phone"
+               type="text"
+               required maxlength="12"
+               placeholder="Phone">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.email"
+               type="text"
+               required maxlength="25"
+               placeholder="Email">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.street"
+               type="text"
+               required maxlength="25"
+               placeholder="Street">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.postalCode"
+               type="text"
+               required maxlength="10"
+               placeholder="Postal code">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="contact.city"
+               type="text"
+               required maxlength="25"
+               placeholder="City">
+      </mat-form-field>
+      <mat-card-footer></mat-card-footer>
+    </div>
+  </div>
+</mat-card>
