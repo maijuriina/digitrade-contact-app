@@ -2,7 +2,7 @@
   <div fxLayout="row" fxLayoutAlign="center start">
     <div fxLayout="column" class="width-detail">
 
-      <mat-card-title class="app-title">CONTACT APP 2019</mat-card-title>
+      <mat-card-title color="accent">CONTACT APP 2019</mat-card-title>
 
       <mat-form-field>
         <input matInput [(ngModel)]="contact.firstName"
@@ -52,7 +52,11 @@
                required maxlength="25"
                placeholder="City">
       </mat-form-field>
-      <mat-card-footer></mat-card-footer>
+      <button mat-fab color="primary" class="fab-detail">
+        <i class="material-icons">check</i>
+      </button>
+      
     </div>
   </div>
 </mat-card>
+
