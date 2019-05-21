@@ -1,19 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { ContactListComponent } from './contact/contact-list/contact-list.component';
 import { ContactListItemComponent } from './contact/contact-list/contact-list-item/contact-list-item.component';
+import { ContactDetailComponent } from './contact/contact-detail/contact-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactListComponent,
-    ContactListItemComponent
+    ContactListItemComponent,
+    ContactDetailComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
