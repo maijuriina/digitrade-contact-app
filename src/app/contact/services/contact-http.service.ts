@@ -1,5 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Contact} from '../contact';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +13,7 @@ export class ContactHttpService {
     this.url = 'http://localhost:3000/contacts';
   }
 
-  get() {
-    return this.http
-      .get(this.url)
-      .subscribe(data => {
-        console.log(data);
-    });
+  get(): Observable<Contact[]> {
+    return this.http.get<Contact[]>(ge)
   }
 }
