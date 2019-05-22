@@ -14,8 +14,8 @@ export class ContactListComponent implements OnInit {
   selectedContactName: string;
 
   constructor(private contactService: ContactService) {
-    this.contacts = [];
-    this.selectedContactName = '';
+  this.contacts = [];
+  this.selectedContactName = '';
   }
 
   onContactSelected(contact: Contact): void {
@@ -24,7 +24,10 @@ export class ContactListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.contacts = this.contactService.get();
-    console.log(this.contacts);
+    /* this.contacts = this.contactService.get();
+    console.log(this.contacts); */
+    this.contactService.get().subscribe((response => {
+      this.contacts = response;
+    }));
   }
 }
