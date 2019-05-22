@@ -10,10 +10,12 @@ import { FormsModule } from '@angular/forms';
 import { ContactListComponent } from './contact/contact-list/contact-list.component';
 import { ContactListItemComponent } from './contact/contact-list/contact-list-item/contact-list-item.component';
 import { ContactDetailComponent } from './contact/contact-detail/contact-detail.component';
-import { MatIconModule } from '@angular/material';
+import {MatIconModule, MatToolbarModule} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import {MatListModule} from '@angular/material';
+import {AvatarModule} from 'ngx-avatar';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,10 @@ import { HttpClientModule } from '@angular/common/http';
     FlexLayoutModule,
     MatDividerModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatListModule,
+    MatToolbarModule,
+    AvatarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

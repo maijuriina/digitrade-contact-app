@@ -1,3 +1,12 @@
-<div (click)="onSelect(contact)"> <!--Handles a click to retrieve data-->
-  {{contact.firstName}} {{contact.lastName}} {{contact.phone}}
-</div>
+<mat-list-item (click)="onSelect(contact)" class="dtca-contact-list-item"> <!--Handles a click to retrieve data-->
+  <div fxLayout="row" fxLayoutAlign="center start" fxFlexfill>
+    <ngx-avatar matListIcon class="dtca-contact-list-item-avatar"
+                [name]="contact.firstName + ' ' + contact.lastName"
+                [size]="55">
+    </ngx-avatar>
+    <div fxFlex fxLayout="column">
+      <div class="dtca-contact-list-item-title">{{contact.lastName}} {{contact.firstName}}</div>
+      <div class="dtca-contact-list-item-subtitle">{{contact.phone}}</div>
+    </div>
+  </div>
+</mat-list-item>

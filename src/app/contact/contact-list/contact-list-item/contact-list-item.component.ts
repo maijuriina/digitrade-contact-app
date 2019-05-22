@@ -12,6 +12,7 @@ export class ContactListItemComponent implements OnInit {
 
   constructor() {
     this.selected = new EventEmitter<Contact>();
+    console.log(this.selected);
   }
 
   ngOnInit() {

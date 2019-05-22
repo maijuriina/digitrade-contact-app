@@ -1,10 +1,16 @@
-<input value="{{selectedContactName}}"> <!--binds data on click and displays in text box-->
+<mat-card>
+  <mat-toolbar>
+<button mat-fab color="primary">
+    <i class="material-icons">list</i>
+  </button>Contacts</mat-toolbar>
 
-<div *ngFor="let c of contacts">
-  <!--{{contact.firstName}} {{contact.lastName}}, tel. {{contact.phone}} retrieved through -list-item,
-  here transfers c variable onwards and takes click event of picked item-->
-  <dtca-contact-list-item
+<mat-nav-list>
+  <dtca-contact-list-item *ngFor="let c of contacts"
     [contact]="c"
   (selected)="onContactSelected($event)">
   </dtca-contact-list-item>
-</div>
+</mat-nav-list>
+</mat-card>
+
+<!-- <input value="{{selectedContactName}}"> --> <!--binds data on click and displays in text box-->
+
