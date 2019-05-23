@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ContactListComponent } from './contact/contact-list/contact-list.component';
 import { ContactListItemComponent } from './contact/contact-list/contact-list-item/contact-list-item.component';
 import { ContactDetailComponent } from './contact/contact-detail/contact-detail.component';
-import {MatIconModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import {MatCheckboxModule, MatIconModule, MatSelectModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -49,7 +49,9 @@ const appRoutes: Routes = [
     AvatarModule,
     RouterModule,
     RouterModule.forRoot(appRoutes),
-    MatSidenavModule
+    MatSidenavModule,
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
