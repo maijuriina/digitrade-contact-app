@@ -23,4 +23,8 @@ export class ContactService {
     // return this.contacts;
     return this.contactHttpService.get();
   }
+
+  getContactById(id): Observable<Contact> {
+    return this.contactHttpService.getById(id);
+  }
 }

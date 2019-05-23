@@ -10,12 +10,20 @@ import { FormsModule } from '@angular/forms';
 import { ContactListComponent } from './contact/contact-list/contact-list.component';
 import { ContactListItemComponent } from './contact/contact-list/contact-list-item/contact-list-item.component';
 import { ContactDetailComponent } from './contact/contact-detail/contact-detail.component';
-import {MatIconModule, MatToolbarModule} from '@angular/material';
+import {MatIconModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {MatListModule} from '@angular/material';
 import {AvatarModule} from 'ngx-avatar';
+import {RouterModule, Routes} from '@angular/router';
+
+const appRoutes: Routes = [
+  {path: 'contacts', component: ContactListComponent},
+  {path: 'contacts/new', component: ContactDetailComponent},
+  {path: 'contacts/:id', component: ContactDetailComponent},
+  {path: '', redirectTo: 'contacts', pathMatch: 'full'}
+];
 
 @NgModule({
   declarations: [
@@ -38,7 +46,10 @@ import {AvatarModule} from 'ngx-avatar';
     HttpClientModule,
     MatListModule,
     MatToolbarModule,
-    AvatarModule
+    AvatarModule,
+    RouterModule,
+    RouterModule.forRoot(appRoutes),
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
