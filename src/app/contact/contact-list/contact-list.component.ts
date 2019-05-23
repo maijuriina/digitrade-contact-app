@@ -3,6 +3,7 @@ import {Contact} from '../contact';
 import {formGroupNameProvider} from '@angular/forms/src/directives/reactive_directives/form_group_name';
 import {group} from '@angular/animations';
 import {ContactService} from '../services/contact.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'dtca-contact-list',
@@ -13,14 +14,13 @@ export class ContactListComponent implements OnInit {
   contacts: Contact[];
   selectedContactName: string;
 
-  constructor(private contactService: ContactService) {
+  constructor(private contactService: ContactService, private router: Router) {
   this.contacts = [];
   this.selectedContactName = '';
   }
 
-  onContactSelected(contact: Contact): void {
-    this.selectedContactName = contact.firstName + ' ' + contact.lastName;
-    alert(contact.firstName);
+  onContactSelected(contact) {
+    this.router.navigate(['/contacts/' + contact.id]);
   }
 
   ngOnInit() {
