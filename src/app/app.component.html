@@ -4,7 +4,8 @@
 
 <!-- <dtca-contact-list></dtca-contact-list> -->
 
-<mat-sidenav-container class="dtca-sidenav-container">
+<mat-card class="fullscreen">
+  <mat-sidenav-container class="dtca-sidenav-container">
   <mat-sidenav #sidenav align="start" [mode]="'over'" [opened]="false" class="dtca-sidenav">
     <!-- Sidenav content -->
     <div>
@@ -40,7 +41,11 @@
     <div class="dtca-app-container">
       <!-- App -->
       <router-outlet></router-outlet>
+      <button mat-fab color="primary" class="fab-detail" align="right">
+        <i class="material-icons">add</i>
+      </button>
     </div>
   </div>
 </mat-sidenav-container>
+</mat-card>
 

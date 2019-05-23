@@ -34,3 +34,14 @@
   font-size: large;
   font-family: "Gill Sans MT";
 }
+
+.fab-detail {
+  position: fixed !important;
+  bottom: 20px;
+  right: 20px;
+}
+
+.fullscreen {
+  widtht: auto;
+  height: 500px;
+}
