@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatListModule} from '@angular/material';
 import {AvatarModule} from 'ngx-avatar';
 import {RouterModule, Routes} from '@angular/router';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 const appRoutes: Routes = [
   {path: 'contacts', component: ContactListComponent},
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     AppComponent,
     ContactListComponent,
     ContactListItemComponent,
-    ContactDetailComponent
+    ContactDetailComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
