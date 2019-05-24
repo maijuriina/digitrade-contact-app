@@ -2,9 +2,11 @@
   <button *ngIf="!options.backEnabled" color="primary" mat-fab (click)="onMenuClick()">
   <mat-icon class="mat-18">list</mat-icon>
   </button>
-<button *ngIf="options.backEnabled" color="primary" mat-fab (click)="onNavigateBack()">
-  <mat-icon class="mat-18">arrow_back_ios</mat-icon>
-</button>
+
+  <button *ngIf="options.backEnabled" color="primary" mat-fab (click)="onNavigateBack()">
+  <mat-icon class="mat-18">arrow_back</mat-icon>
+  </button>
+
   <span>{{options.title}}</span>
   <button mat-icon-button (click)="action.runAction()"
     *ngFor="let action of options.actions">

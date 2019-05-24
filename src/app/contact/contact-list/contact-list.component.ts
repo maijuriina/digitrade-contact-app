@@ -4,6 +4,8 @@ import {formGroupNameProvider} from '@angular/forms/src/directives/reactive_dire
 import {group} from '@angular/animations';
 import {ContactService} from '../services/contact.service';
 import {Router} from '@angular/router';
+import {ToolbarOptions} from '../../toolbar/toolbar-options';
+import {ToolbarAction} from '../../toolbar/toolbar-actions';
 
 @Component({
   selector: 'dtca-contact-list',
