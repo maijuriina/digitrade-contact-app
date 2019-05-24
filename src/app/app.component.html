@@ -31,21 +31,15 @@
 
   <div fxFlexFill class="dtca-sidenav-content">
     <!-- App content -->
-    <mat-toolbar>
-      <button color="primary" mat-fab (click)="sidenav.toggle()">
-        <i class="material-icons">list</i>
-      </button>
-      <span>Contacts</span>
-    </mat-toolbar>
-    <!-- <dtca-toolbar (MenuClick)="sidenav.toggle()"></dtca-toolbar> -->
+<dtca-toolbar (MenuClick)="sidenav.toggle()"></dtca-toolbar>
     <div class="dtca-app-container">
       <!-- App -->
       <router-outlet></router-outlet>
-      <button mat-fab color="primary" class="fab-detail" align="right">
-        <i class="material-icons">add</i>
-      </button>
     </div>
   </div>
 </mat-sidenav-container>
+  <button mat-fab color="primary" class="fab-detail" align="right">
+    <i class="material-icons">add</i>
+  </button>
 </mat-card>
 

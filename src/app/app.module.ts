@@ -18,6 +18,9 @@ import {MatListModule} from '@angular/material';
 import {AvatarModule} from 'ngx-avatar';
 import {RouterModule, Routes} from '@angular/router';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import {ContactService} from './contact/services/contact.service';
+import {ContactHttpService} from './contact/services/contact-http.service';
+import {ToolbarService} from './toolbar/toolbar.service';
 
 const appRoutes: Routes = [
   {path: 'contacts', component: ContactListComponent},
@@ -55,7 +58,11 @@ const appRoutes: Routes = [
     MatCheckboxModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [
+    ContactService,
+    ContactHttpService,
+    ToolbarService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

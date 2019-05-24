@@ -20,7 +20,7 @@ export class ContactListComponent implements OnInit {
   }
 
   onContactSelected(contact) {
-    this.router.navigate(['/contacts/' + contact.id]);
+    this.router.navigate(['/contacts/' + contact.id], {skipLocationChange: true});
   }
 
   ngOnInit() {
