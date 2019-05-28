@@ -5,7 +5,7 @@ import {group} from '@angular/animations';
 import {ContactService} from '../services/contact.service';
 import {Router} from '@angular/router';
 import {ToolbarOptions} from '../../toolbar/toolbar-options';
-import {ToolbarAction} from '../../toolbar/toolbar-actions';
+import {ToolbarService} from '../../toolbar/toolbar.service';
 
 @Component({
   selector: 'dtca-contact-list',
@@ -16,20 +16,27 @@ export class ContactListComponent implements OnInit {
   contacts: Contact[];
   selectedContactName: string;
 
-  constructor(private contactService: ContactService, private router: Router) {
+  constructor(private contactService: ContactService, private router: Router, private toolbar: ToolbarService) {
   this.contacts = [];
   this.selectedContactName = '';
+  }
+
+  ngOnInit() {
+    /* this.contacts = this.contactService.get();
+    console.log(this.contacts); */
+    this.contactService.get().subscribe(response => {
+      this.contacts = response;
+      console.log(response);
+    });
+    this.toolbar.setToolbarOptions(new ToolbarOptions(false, 'Contacts', []));
   }
 
   onContactSelected(contact) {
     this.router.navigate(['/contacts/' + contact.id], {skipLocationChange: true});
   }
 
-  ngOnInit() {
-    /* this.contacts = this.contactService.get();
-    console.log(this.contacts); */
-    this.contactService.get().subscribe((response => {
-      this.contacts = response;
-    }));
+  onCreateNew(): void {
+    this.router.navigate(['/contacts/new']);
+    console.log('pöö');
   }
 }

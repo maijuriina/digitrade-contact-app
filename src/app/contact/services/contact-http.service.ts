@@ -29,4 +29,20 @@ export class ContactHttpService {
       return response as Contact;
     }));
   }
+
+  put(contact): Observable<Contact> {
+    return this.http.put(this.url + '/' + contact.id, contact).pipe(map(response => {
+      return response as Contact;
+    }));
+  }
+
+  post(contact): Observable<Contact> {
+    return this.http.post(this.url, contact).pipe(map(response => {
+      return response as Contact;
+    }));
+  }
+
+  delete(contact): Observable<any> {
+    return this.http.delete(this.url + '/' + contact.id);
+  }
 }

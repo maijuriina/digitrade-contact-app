@@ -54,7 +54,7 @@
     </div>
   </div>
 </mat-card>
-<button mat-fab color="primary" class="fab-detail">
+<button *ngIf="editingEnabled" mat-fab (click)="onSave()" color="primary" class="fab-detail">
   <i class="material-icons">check</i>
 </button>
 
